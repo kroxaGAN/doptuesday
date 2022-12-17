@@ -1,13 +1,11 @@
 import React from 'react';
 import {Navigate, NavLink, Route, Routes } from 'react-router-dom';
 import styles from './Site.module.css'
-import {PageOne} from "./pages/PageOne";
-import {PageTwo} from "./pages/PageTwo";
-import {PageThree} from "./pages/PageThree";
 import {Error404} from "./pages/Error404";
 import {Page} from "./pages/Page";
 import {dataState} from "../dataState/dataState";
 import {useWindowSize} from "../Helpers/useWindowSize";
+import {LocalStorage} from "./pages/LocalStorage";
 
 
 export const Site = () => {
@@ -25,6 +23,7 @@ export const Site = () => {
                         <div> <NavLink className={({isActive})=>isActive ? styles.active : styles.navLink} to={'/page/2'}>Page Three</NavLink> </div>
                         {/*<div> <NavLink className={({isActive})=>isActive ? styles.active : styles.navLink} to={'/page3'}>Page Three</NavLink> </div>*/}
                         <a href={'/error'} >Error</a>
+                        <div><NavLink className={({isActive})=>isActive ? styles.active : styles.navLink} to={'/page/localstorage'}>Local Storage</NavLink> </div>
 
                     </div>
                 :<div>
@@ -39,9 +38,11 @@ export const Site = () => {
 
                 <div className={styles.content}>
                 <Routes>
-                    <Route path={'/'} element={ <Navigate to={'/page1'}/> }/>
+                    <Route path={'/'} element={ <Navigate to={'/page/0'}/> }/>
 
                     <Route path={'/page/:id'} element={<Page dataState={dataState}/>}/>
+
+                    <Route path={'/page/localstorage'} element={<LocalStorage/>}/>
 
                     {/*<Route path={'/page3'} element={<PageThree/>}/>*/}
 
