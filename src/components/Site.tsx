@@ -47,6 +47,7 @@ export const Site = () => {
                     {/*<Route path={'/page3'} element={<PageThree/>}/>*/}
 
                     <Route path={'/error'} element={<Error404/>}/>
+                    <Route path={'/er'} element={<div>111</div>}/>
                     <Route path={'/*'} element={<Navigate to={'/error'}/>}/>
                 </Routes>
                 </div>
