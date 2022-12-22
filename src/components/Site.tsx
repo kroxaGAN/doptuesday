@@ -24,6 +24,7 @@ export const Site = () => {
                         {/*<div> <NavLink className={({isActive})=>isActive ? styles.active : styles.navLink} to={'/page3'}>Page Three</NavLink> </div>*/}
                         <a href={'/error'} >Error</a>
                         <div><NavLink className={({isActive})=>isActive ? styles.active : styles.navLink} to={'/page/localstorage'}>Local Storage</NavLink> </div>
+                        <div><NavLink to={'/page/3'}>Prosto </NavLink> </div>
 
                     </div>
                 :<div>
